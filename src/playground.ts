@@ -13,6 +13,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
+//import fs;
 import * as nn from "./nn";
 import {HeatMap, reduceMatrix} from "./heatmap";
 import {
@@ -183,12 +184,29 @@ let lineChart = new AppendingLineChart(d3.select("#linechart"),
 function makeGUI() {
   d3.select("#reset-button").on("click", () => {
     //My code
-    var segunda = window.open('',"_blank");
-    segunda.document.write("epochs,trainloss,testloss");
+    //var segunda = window.open('',"_blank");    
+    var fileContents = "epochs,trainloss,testloss\n";
+    var filename = "performance.csv";
+    var filetype = "text/plain";
+    
     for (var i=0; i < epochs.length; i++){
       //document.write("<div>"+String(epochs[i])+","+String(trainloss[i])+","+String(testloss[i])+"</div>\n");
-      segunda.document.write("<div>"+String(epochs[i])+","+String(trainloss[i])+","+String(testloss[i])+"</div>\n");
+      fileContents += String(epochs[i])+","+String(trainloss[i])+","+String(testloss[i])+"\n";
     }
+
+    var a = document.createElement("a");
+    var dataURI = "data:" + filetype +
+        ";base64," + btoa(fileContents);
+    a.href = dataURI;
+    a['download'] = filename;
+    var e = document.createEvent("MouseEvents");
+    // Use of deprecated function to satisfy TypeScript.
+    e.initMouseEvent("click", true, false,
+        document.defaultView, 0, 0, 0, 0, 0,
+        false, false, false, false, 0, null);
+    a.dispatchEvent(e);
+    
+    
     epochs = [];
     trainloss = [];
     testloss = [];
