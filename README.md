@@ -1,10 +1,10 @@
 # Deep playground
 
-The idea is to save ```epoch```, ```trainloss``` and ```testloss``` values so that we can compare different set of parameters in our model.
+The idea is to save `epoch`, `trainloss` and `testloss` values so that we can compare different set of parameters in our model
 
-You can start learning process, at some point press "Reset" button and you'll be asked to download the CSV file
+You can start learning process, at some point press "Reset" button and you will be asked to download the CSV file
 
-The following text was copied from [Playground Tensorflow](https://github.com/tensorflow/playground "Playground Tensorflow")
+Following text from [Playground Tensorflow](https://github.com/tensorflow/playground "Playground Tensorflow")
 ## Development
 
 To run the visualization locally, run:
@@ -16,3 +16,5 @@ For a fast edit-refresh cycle when developing run `npm run serve-watch`.
 This will start an http server and automatically re-compile the TypeScript,
 HTML and CSS files whenever they change.
 
+Try it Here!
+[Playground Tensorflow with CSV](https://eager-poincare-8d2c30.netlify.app "Playground Tensorflow with CSV file")
