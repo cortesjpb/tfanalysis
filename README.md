@@ -17,4 +17,4 @@ This will start an http server and automatically re-compile the TypeScript,
 HTML and CSS files whenever they change.
 
 Try it Here!
-[Playground Tensorflow with CSV](https://eager-poincare-8d2c30.netlify.app "Playground Tensorflow with CSV file")
+[Playground Tensorflow with CSV](https://playgroundanalysis.netlify.app/ "Playground Tensorflow with CSV file")
